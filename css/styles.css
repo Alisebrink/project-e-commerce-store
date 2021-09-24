@@ -1,0 +1,777 @@
+/* Box sizing rules */
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Remove default padding */
+
+ul[class], ol[class] {
+    padding: 0;
+}
+
+/* Remove default margin */
+
+body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+}
+
+/* Set core body defaults */
+
+body {
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+
+ul[class], ol[class] {
+    list-style: none;
+}
+
+/* Make images easier to work with */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+
+article>*+* {
+    margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* end of CSS resets */
+
+/* Nedan börjar min egna kod */
+
+body { /* sätter vilket typsnitt jag vill ha */
+    font-family: 'Open Sans', sans-serif;
+    background-color: lightgrey !important;
+}
+
+h1, h2, h3, h4, h5, h6 { /* sätter stil för alla rubriknivåer */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2em !important;
+}
+
+h5 {
+    font-size: 1em !important;
+    color: red;
+}
+
+nav ul>li>a {
+    color: white;
+    text-decoration: none;
+}
+
+#container { /* lägger stilen för min container */
+    z-index: 1;
+    max-width: 1280px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: white;
+}
+
+.z-index-preHeader, .z-index-mainHeader { /* detta lägger mina boxar under min header så att de kan gå ut ända till kanten */
+    width: 100%;
+    z-index: -2;
+    position: absolute;
+}
+
+.z-index-preHeader { /* positionerar pre header svarta boxens bakgrund */
+    min-height: 35px;
+    background: black;
+}
+
+.z-index-mainHeader { /* positionerar main header svarta bakgrund bakom header */
+    background: #151515;
+    margin-top: 35px;
+    min-height: 140px;
+    border-bottom: 2px solid black;
+}
+
+#preHeader { /* preHeader design */
+    background: black;
+    color: white;
+    min-height: 35px;
+    display: flex;
+}
+
+#preHeader i {
+    color: white;
+    margin-right: 15px;
+}
+
+#preHeader .left i:hover {
+    color: red;
+}
+
+#preHeader .left {
+    padding: 5px;
+    width: 15%;
+}
+
+#preHeader .center {
+    width: 70%;
+    text-align: right;
+    padding:5px 25px 5px 5px;
+}
+
+#preHeader .center a {
+    color:white;
+}
+
+#preHeader .center a:hover {
+    text-decoration: none;
+    color:red;
+}
+
+#preHeader .right {
+    text-align: center;
+    padding: 5px;
+    width: 15%;
+    background: red;
+    color: white;
+}
+
+#preHeader .right a {
+    text-decoration: none;
+    color:white;
+}
+
+#preHeader .right:hover {
+    background: #A30000;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    margin:0 auto;
+    max-width:1280px;
+    z-index: 2;
+  }
+
+header { /* header design */
+    background: #151515;
+    min-height: 100px;
+    border-bottom: 2px solid black;
+}
+
+header i {
+    color: white;
+}
+
+header .form-inline>a {
+    background: red;
+    padding: 5px 20px 5px 20px;
+    border-radius: 5px;
+}
+
+header .form-inline>a:hover {
+    background: #A30000;
+}
+
+.headerGrid {
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 132px;
+    padding:10px;
+}
+
+main {
+    background: white;
+    clear: both;
+    display: flex;
+}
+
+#mainNav { /* design för huvudmenyn */
+    width: 20%;
+    background: #E8E8E8;
+    align-self: stretch;
+}
+
+.huvudkategori {
+    background: #E8E8E8;
+    color: black;
+    border-bottom: 2px solid red;
+}
+
+.underkategori {
+    background: white;
+    color: black;
+    padding-left: 15px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.mainMenu a {
+    color: black;
+    font-size: 1em;
+}
+
+.mainMenu li:hover {
+    background: #A30000;
+}
+
+.mainMenu a:hover {
+    color: white;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.mainCards { /* design för cards på startsidan */
+    display: flex;
+    height: 100%;
+}
+
+.btn {
+    color: white !important;
+    background: red !important;
+}
+
+.btn:hover {
+    background: #A30000 !important;
+}
+
+#mainArticles {
+    width: 80%;
+    padding: 10px;
+}
+
+#productPage {
+    width: 80%;
+}
+
+.product {
+    display: flex;
+    padding: 50px;
+}
+
+.productWidget {
+    padding: 50px;
+}
+
+.productTop {
+    padding: 5px;
+}
+
+.productTop nav {
+    padding: 5px;
+}
+
+.productTop ol {
+    padding: 10px;
+}
+
+.productTop a {
+    color: red !important;
+}
+
+.productTop a:hover {
+    color: black !important;
+    text-decoration: none;
+}
+
+.productImages {
+    width: 40%;
+    padding: 20px;
+}
+
+.productInformation {
+    width: 60%;
+    padding: 20px;
+}
+
+.productInformation>.row {
+    float: right;
+}
+
+.productLists>li {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+h4 {
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.productInformation h3 {
+    color: white;
+    background: red;
+    padding: 5px;
+    font-size: 1.5em;
+}
+
+.productInformation h4 {
+    font-size: 2em;
+    text-align: left;
+    color: red;
+}
+
+
+.flex-container {
+    display: flex;
+}
+
+.h2-header {
+    color: red;
+    font-size: 25px;
+    text-align: center;
+    clear: both;
+}
+
+.card {
+    width: 100%;
+    border-radius: 3px;
+}
+
+.card-titel {
+    background: red;
+    color: white;
+    width: 100%;
+    padding: 5px;
+}
+
+.card-img-top {
+    padding: 10px;
+}
+
+.card-body>a:hover {
+    text-decoration: none;
+}
+
+.column-one, .column-two, .column-three, .column-four {
+    margin: 10px;
+    width: 25%;
+}
+
+.column-one div, .column-two div, .column-three div, .column-four div {
+    margin-bottom: 10px;
+}
+
+#kassa { /* design för kundvagnen och kassan */
+    padding:20px;
+}
+
+#kassa h2 {
+    text-align: center;
+    background:red;
+    color:white;
+    padding:10px;
+}
+
+.kassa {
+    width:80%;
+    margin:0 auto;
+}
+
+#basket {
+    border:solid 1px #ededed;
+    padding:15px;
+    margin:0 auto;
+    clear:both;
+}
+
+#basket li {
+    list-style-type: none;
+    margin-left:0;
+    display:flex;
+}
+
+#basket li>.item-text {
+    color:red;
+    width:60%;
+}
+
+#basket li>.item-count {
+    width:10%;
+}
+
+#basket li>.item-cost {
+    width:30%;
+    text-align: right;
+}
+
+#basket .sum {
+    color:red;
+    float:right;
+    clear:both;
+    margin-top:40px;
+    margin-bottom:20px;
+}
+
+#basket li span {
+    padding:10px;
+}
+
+.kassa form {
+    clear:both;
+    border:solid 1px #ededed;
+    padding:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+#kundvagn-knapp, #slutfar-kop {
+    float:right;
+    clear:both;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+#contactUs { /* design för kontakta oss-sidan */
+    padding: 20px;
+    width: 80%;
+}
+
+#contactUs h2 {
+    color: white;
+    background: red;
+    padding: 10px;
+    font-size:1.5em !important;
+    text-align: left !important;
+}
+
+.contactInformation {
+    width: 100%;
+    padding:15px;
+}
+
+.contactInformation strong {
+    color: red;
+}
+
+.contactInformation a {
+    color:red;
+}
+
+.contactInformation a:hover {
+    color:black;
+    text-decoration: none;
+}
+
+.contactInformation td {
+    width: 150px;
+}
+
+.tdTitle {
+    color: red;
+}
+
+#contactUs input[type=text], select, textarea { /* stil för mitt kontaktformulär */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  #contactUs input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #contactUs  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style the container/contact section */
+  #contactUs .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  /* Create two columns that float next to eachother */
+  #contactUs .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  #contactUs .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+footer { /* design för min footer */
+    background: #151515;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    clear: both;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.footerContent {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.text-uppercase {
+    color: red;
+}
+
+.text-center {
+    padding: 0px;
+}
+
+.list-unstyled>li>a {
+    color: white;
+}
+
+.list-unstyled>li>a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.logo {
+    height: 50px;
+    margin: 0 auto;
+}
+
+#mobileHeader { /* döljer och visar element på desktop */
+    display: none;
+}
+
+#mainHeader, #mainNav {
+    display: block;
+}
+
+#mainArticles {
+    display: block;
+}
+
+#mobileMainArticles {
+    display: none;
+}
+
+@media screen and (max-width: 992px) { /* design för tablet */
+    body {
+        background-color: blue;
+        z-index: 1;
+    }
+    #preHeader, #mainHeader, #mainNav {
+        display: none;
+    }
+    #container {
+        width: 100%;
+        margin: 2px;
+    }
+    #mainArticles {
+        width: 100%;
+        padding: 5px;
+    }
+    #mobileHeader {
+        display: block;
+    }
+    #mobileHeader a {
+        font-size: 1em;
+    }
+    #mobileMenu {
+        display: flex;
+    }
+
+    .kundvagn-mobil {
+        background:red !important;
+    }
+
+    .kundvagn-mobil a {
+        color:white !important;
+    }
+
+    .kundvagn-mobil a:hover {
+        text-decoration: none !important;
+    }
+
+    .kundvagn-mobil i {
+        margin-right:15px !important;
+    }
+    
+    .z-index-preHeader, .z-index-mainHeader {
+        display: none;
+    }
+    .flexMenuSearch {
+        width: 85%;
+        margin: 0 auto;
+    }
+    .flexMenuButton {
+        width: 15%;
+    }
+    .logo {
+        height: 30px;
+    }
+    h2 {
+        font-size: 1.2em !important;
+    }
+    h5 {
+        font-size: 0.7em !important;
+    }
+    .column-one, .column-two, .column-three, .column-four {
+        margin: 5px;
+        width: 25%;
+    }
+
+    #contactUs, #productPage {
+        padding: 10px;
+        width: 100%;
+    }
+
+    /* stil för mobilmenyn */
+    .sidepanel {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        padding-top: 40px;
+        transition: 0.5s;
+    }
+
+    .sidepanel a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidepanel a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidepanel .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #111;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+    }
+    .openbtn:hover {
+        background-color: #444;
+    }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+
+@media screen and (max-width: 780px) { /* stil specifikt för mobiltelefonen */
+    body {
+        background-color: olive;
+        min-width: 360px;
+    }
+    #mainArticles {
+        display: none;
+    }
+    #mobileMainArticles {
+        display: block;
+        width: 100%;
+    }
+
+    .product {
+        display:block;
+        padding:5px;
+    }
+
+    .productWidget {
+        padding:30px 5px 30px 5px;
+    }
+
+    .productWidget img {
+        margin-top:20px;
+    }
+
+    .productWidget h4 {
+        font-size: 1.2em;
+    }
+
+    #productPage .flex-container {
+        display:none;
+    }
+
+    .productImages, .productInformation {
+        width:100%;
+    }
+
+    .flex-container {
+        width: 100%;
+    }
+    .column-one, .column-two {
+        width: 50% !important;
+        margin: 5px;
+    }
+
+    #basket li>.item-text {
+        color:red;
+        width:60%;
+    }
+    
+    #basket li>.item-count {
+        width:20%;
+    }
+    
+    #basket li>.item-cost {
+        width:20%;
+        text-align: right;
+    }
+
+    #contactUs .column, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+
+      .kassa {
+        width:100%;
+        margin:0 auto;
+    }
+
+    #kassa {
+        padding:5px;
+    }
+}
